@@ -27,7 +27,7 @@
                     </div>
                     <div class="calculator-buttons">
                         <div>
-                            <input type="button" value="AC" onclick="display.value = ''">
+                            <input type="button" value="AC" onclick="acButton()">
                             <input type="button" value="/" onclick="handleOperatorClick('/')" class="operator-button" disabled>
                             <input type="button" value="×" onclick="handleOperatorClick('×')" class="operator-button" disabled>
                             <input type="button" value="DEL" onclick="display.value = display.value.toString().slice(0,-1)">
@@ -53,10 +53,10 @@
                         <div>
                             <input type="button" value="." onclick="handleNumClick('.')" class="btn-number">
                             <input type="button" value="0" onclick="handleNumClick('0')" class="btn-number">
-                            <input type="button" value="=" onclick="display.value = eval(display.value)" class="btn-equal">
+                            <input type="button" value="=" onclick="equalButton()" class="btn-equal" disabled>
                         </div>
                     </div>
-                </form>  
+                </form>   
             </div>
         </div>
     </div>
