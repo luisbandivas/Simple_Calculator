@@ -1,5 +1,6 @@
 body{
-    background-color: #1E1E1E;
+    background-image:  repeating-radial-gradient(circle at 0 0, transparent 0, #212120 100px), repeating-linear-gradient(#1e1e1e, #1e1e1e);
+    background-color: #212120;
 }
 .container{
     display: flex;
@@ -14,7 +15,7 @@ body{
     background-color: #2F2E2E;
     padding: 20px;
     border-radius: 40px;
-    box-shadow: -4px -4px 4px 0 rgba(254, 254, 254, 0.164), 4px 4px 4px 4px rgba(0, 0, 0, 0.267);
+    box-shadow: -4px -4px 4px 0 rgba(254, 254, 254, 0.18), 4px 4px 4px 4px rgba(0, 0, 0, 0.20);
 
 }
 .cal-top{
@@ -28,13 +29,13 @@ body{
     height: 60px;
     width: 60px;
     border-radius: 20px;
-    box-shadow: -4px -4px 4px 0 rgba(254, 254, 254, 0.164), 4px 4px 4px 4px rgba(0, 0, 0, 0.267);
+    box-shadow: -3px -3px 4px 0 rgba(254, 254, 254, 0.25), 4px 4px 4px 4px rgba(0, 0, 0, 0.30);
     background: transparent;
     color: #E7844C;
     cursor: pointer;
     margin: 10px;
     font-family: 'Poppins', sans-serif;
-    font-size: large;
+    font-size: x-large;
     font-weight: bold;
 }
 .calculator-buttons input[type="button"].btn-number {

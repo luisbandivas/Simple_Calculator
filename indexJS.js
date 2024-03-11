@@ -22,7 +22,8 @@ function equalButton(){
         disableOperatorButtons();
     }
     else{
-        display.value = eval(display.value)
+        enableOperatorButton();
+        display.value = eval(display.value);
     }
 }
 function enableOperatorButton(){
