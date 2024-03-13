@@ -1,26 +1,36 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
 body{
     background-image:  repeating-radial-gradient(circle at 0 0, transparent 0, #212120 100px), repeating-linear-gradient(#1e1e1e, #1e1e1e);
     background-color: #212120;
 }
 .container{
     display: flex;
+    justify-content: center;
     align-items: center;
-    padding: 100px;
+    height: 100vh;
 }
 .left-container{
     color: #fff;
-    width: 50vw;
+    width: 40%;
+    padding: 2.5rem;
+}
+.left-container h1{
+    margin-bottom: 1rem;
 }
 .calculator{
     background-color: #2F2E2E;
     padding: 20px;
     border-radius: 40px;
     box-shadow: -4px -4px 4px 0 rgba(254, 254, 254, 0.18), 4px 4px 4px 4px rgba(0, 0, 0, 0.20);
-
 }
 .cal-top{
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
     color: #fff;
 }
 .calculator form input{
@@ -33,10 +43,9 @@ body{
     background: transparent;
     color: #E7844C;
     cursor: pointer;
-    margin: 10px;
-    font-family: 'Poppins', sans-serif;
-    font-size: x-large;
-    font-weight: bold;
+    margin: 0.6rem;
+    font-size: 1.5rem;
+    font-weight: 700;
 }
 .calculator-buttons input[type="button"].btn-number {
     color: #fff;
@@ -48,17 +57,30 @@ form input.btn-equal{
     color: #fff;
     background-color: #E7844C;
 }
-form .screen{
+.screen{
+    border: 0;
+    outline: 0;
+    border-radius: 20px;
+    margin: 20px 5px;
+    min-height: 120px;
     display: flex;
     justify-content: flex-end;
-    margin: 20px 5px;
-}
-form .screen input{
-    height: 120px;
-    background: transparent;
+    align-items: flex-end;
     text-align: right;
-    flex: 1;
-    font-size: 45px;
+    background: transparent;
+    flex: 1 1 0%;
+    color: white;
     box-shadow:  0 0 4px 4px rgba(0, 0, 0, 0.25),  4px 4px 10px rgba(255, 255, 255, 0.1);
 }
-
+.screen .input{
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+.screen .output{
+    font-size: 3rem;
+    font-weight: 700;
+    width: 100%;
+    max-width: 100%;
+    overflow: auto;
+    color: #E7844C;
+}

@@ -10,50 +10,55 @@
     <div class="container">
         <div class="left-container">
             <h1>Activity 1: Simple Calculator</h1>
-            <p>adipisicing elit. Distinctio quod pariatur 
-                architecto, nihil assumenda tempore voluptatum 
-                beatae maiores obcaecati, omnis aut impedit! 
-                Vero corporis repudiandae enim laudantium voluptates doloribus. Facilis</p>
+            <p>multiply at divide button, squareroot at squared, percentage, at history</p>
         </div>
         <div class="right-container">
             <div class="calculator">
                 <form>
                     <div class="cal-top">
-                        <h4 class="logo">Multicool</h4>
                         <button>History</button>
                     </div>
                     <div class="screen">
-                        <input type="text" id="display" name="display" readonly>
+                        <div class="content">
+                            <div class="input"></div>
+                            <div class="output"></div>
+                        </div>
                     </div>
                     <div class="calculator-buttons">
                         <div>
-                            <input type="button" value="AC" onclick="acButton()">
-                            <input type="button" value="/" onclick="handleOperatorClick('/')" class="operator-button" disabled>
-                            <input type="button" value="&times;" onclick="handleOperatorClick('*')" class="operator-button" disabled>
-                            <input type="button" value="DEL" onclick="display.value = display.value.toString().slice(0,-1)">
+                            <input type="button" value="AC">
+                            <input type="button" value="." class="operator-button">
+                            <input type="button" value="%" class="operator-button" disabled>
+                            <input type="button" value="DEL">
                         </div>
                         <div>
-                            <input type="button" value="7" onclick="handleNumClick('7')" class="btn-number">
-                            <input type="button" value="8" onclick="handleNumClick('8')" class="btn-number">
-                            <input type="button" value="9" onclick="handleNumClick('9')" class="btn-number">
-                            <input type="button" value="+" onclick="handleOperatorClick('+')" class="operator-button" disabled>
+                            <input type="button" value="x²" class="operator-button" id="square" disabled>
+                            <input type="button" value="√" class="operator-button" id="square-root" disabled>
+                            <input type="button" value="+/-" id="rev-sign">
+                            <input type="button" value="+" class="operator-button" disabled>
                         </div>
                         <div>
-                            <input type="button" value="4" onclick="handleNumClick('4')" class="btn-number">
-                            <input type="button" value="5" onclick="handleNumClick('5')" class="btn-number">
-                            <input type="button" value="6" onclick="handleNumClick('6')" class="btn-number">
-                            <input type="button" value="-" onclick="handleOperatorClick('-')" class="operator-button" disabled>
+                            <input type="button" value="7" class="btn-number">
+                            <input type="button" value="8" class="btn-number">
+                            <input type="button" value="9" class="btn-number">
+                            <input type="button" value="-" class="operator-button" disabled>
                         </div>
                         <div>
-                            <input type="button" value="1" onclick="handleNumClick('1')" class="btn-number">
-                            <input type="button" value="2" onclick="handleNumClick('2')" class="btn-number">
-                            <input type="button" value="3" onclick="handleNumClick('3')" class="btn-number">
-                            <input type="button" value="%" onclick="handleOperatorClick('%')" class="operator-button" disabled>
+                            <input type="button" value="4" class="btn-number">
+                            <input type="button" value="5" class="btn-number">
+                            <input type="button" value="6" class="btn-number">
+                            <input type="button" value="×" class="operator-button" disabled> 
                         </div>
                         <div>
-                            <input type="button" value="." onclick="handleNumClick('.')" class="btn-number">
-                            <input type="button" value="0" onclick="handleNumClick('0')" class="btn-number">
-                            <input type="button" value="=" onclick="equalButton()" class="btn-equal" disabled>
+                            <input type="button" value="1" class="btn-number">
+                            <input type="button" value="2" class="btn-number">
+                            <input type="button" value="3" class="btn-number">
+                            <input type="button" value="÷" class="operator-button" disabled>
+                        </div>
+                        <div>
+                            <input type="button" value="00" class="btn-number">
+                            <input type="button" value="0" class="btn-number">
+                            <input type="button" value="=" class="btn-equal" disabled>
                         </div>
                     </div>
                 </form>   
