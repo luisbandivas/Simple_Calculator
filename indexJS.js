@@ -8,6 +8,9 @@ const numberxzy = document.getElementsByClassName('btn-number');
 const operatorxzy = document.getElementsByClassName('operator-button');
 const dotButton = document.querySelector('.operator-button[value="."]');
 
+let historyData = [];
+let expressOBJ = "";
+let resultData = "";
 let numClicked = false;
 let dotClicked = false;
 
@@ -18,20 +21,32 @@ for (let btn of buttons) {
 
     if (value !== "+/-") {
         btn.addEventListener('click', () => {
-            if (value === "AC") {
+            if (value === "C") {
                 input = "";
                 display_input.innerHTML = "";
                 display_output.innerHTML = "";
                 disableOperatorButtons();
+            } else if (value === "AC"){
+                input = "";
+                display_input.innerHTML = "";
+                display_output.innerHTML = "";
+                clearHistory();
             } else if (value === "DEL") {
                 input = input.slice(0, -1);
                 display_input.innerHTML = input;
                 if(input === ''){
                     disableOperatorButtons();
+                    display_output.innerHTML = "";
                 }
             } else if (value === "=") {
                 let processedInput = input.replace(/×/g, "*").replace(/÷/g, "/");
                 let result = eval(perC(processedInput));
+                expressOBJ = processedInput;
+                resultData = result; 
+                historyData.push({"expression": expressOBJ,"result":resultData});
+                showHistory();
+                resultData = "";
+                expressOBJ = "";
                 display_output.innerHTML = result;
             } else {
                 if (value === "×") {
@@ -64,8 +79,14 @@ function sQ() {
     const inputNumber = parseFloat(input);
     const result = Math.pow(inputNumber, 2);
     input = `${inputNumber}²`;
+    expressOBJ = inputNumber;
+    resultData = result; 
+    historyData.push({"expression": expressOBJ,"result":resultData});
+    showHistory();
     display_input.innerHTML = input;
     display_output.innerHTML = result;
+    resultData = "";
+    expressOBJ = "";
 }
 sQr.addEventListener('click', sQ);
 
@@ -73,8 +94,14 @@ function sqrt() {
     const inputNumber = parseFloat(input);
     const result = Math.sqrt(inputNumber);
     input = `√(${inputNumber})`;
+    expressOBJ = inputNumber;
+    resultData = result; 
+    historyData.push({"expression": expressOBJ,"result":resultData});
+    showHistory();
     display_input.innerHTML = input;
     display_output.innerHTML = result;
+    resultData = "";
+    expressOBJ = "";
 }
 sQrt.addEventListener('click', sqrt);
 
@@ -142,3 +169,24 @@ function disableOperatorButtons() {
 }
 
 disableOperatorButtons();
+
+function showHistory() {
+    let log = document.getElementsByClassName('log');
+    let string = "";
+
+    for (let i = Object.keys(historyData).length - 1; i >= 0; i--) {
+        let key = Object.keys(historyData)[i];
+        string += "<span class='expression'>" + historyData[key]["expression"] + "</span><br>";
+        string += "<span class='result'>" + "= " + historyData[key]["result"] + "</span><br>";
+    }
+
+    for (let i = 0; i < log.length; i++) {
+        log[i].innerHTML = string;
+    }
+}
+
+function clearHistory() {
+    historyData = []; 
+    showHistory(); 
+}
+ 

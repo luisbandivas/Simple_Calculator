@@ -8,25 +8,18 @@
 </head>
 <body>
     <div class="container">
-        <div class="left-container">
-            <h1>Activity 1: Simple Calculator</h1>
-            <p>multiply at divide button, squareroot at squared, percentage, at history</p>
-        </div>
-        <div class="right-container">
-            <div class="calculator">
-                <form>
-                    <div class="cal-top">
-                        <button>History</button>
+        <div class="calculator">
+            <form>
+                <div class="screen">
+                    <div class="content">
+                        <div class="input"></div>
+                        <div class="output"></div>
                     </div>
-                    <div class="screen">
-                        <div class="content">
-                            <div class="input"></div>
-                            <div class="output"></div>
-                        </div>
-                    </div>
+                </div>
+                <div class="btnNhis">
                     <div class="calculator-buttons">
                         <div>
-                            <input type="button" value="AC">
+                            <input type="button" value="C">
                             <input type="button" value="." class="operator-button">
                             <input type="button" value="%" class="operator-button" disabled>
                             <input type="button" value="DEL">
@@ -61,8 +54,15 @@
                             <input type="button" value="=" class="btn-equal" disabled>
                         </div>
                     </div>
-                </form>   
-            </div>
+                    <div class="historyLog" id="historyLog"> 
+                        <div class="top">
+                            <h3>History Log:</h3>
+                            <input type="button" value="AC" class="btn-AC">
+                        </div>                            
+                        <div class="log"></div>
+                    </div>
+                </div>
+            </form>   
         </div>
     </div>
     <script src="indexJS.js"></script>
